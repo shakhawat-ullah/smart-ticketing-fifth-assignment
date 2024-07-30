@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-
 </head>
 
 <body>
@@ -108,7 +107,7 @@
             </div>
         </section>
     </header>
-
+    <!-- Main Section -->
     <main>
         <!-- Best Offer Section -->
         <section class="w-4/5 mx-auto max-w-6xl mb-20">
@@ -153,7 +152,7 @@
         </section>
 
         <!-- PH Paribahan Section -->
-        <section class="bg-gray-100 border-green-400 border-t-4 rounded-3xl mb-20">
+        <section class="bg-gray-100 border-green-400 border-t-4 rounded-3xl pb-10 lg:pb-20">
             <!-- PH paribahan Title and description -->
             <div class="w-4/5 mx-auto max-w-6xl mb-10 lg:mb-20 mt-16 lg:mt-32 space-y-5">
                 <h3 class="text-center font-raleway font-bold text-2xl lg:text-5xl">P.H Paribahan</h3>
@@ -227,13 +226,12 @@
                 </div>
             </div>
 
-
-
             <!-- Select Your Seat -->
-            <div id="buy-tickets" class="w-4/5 mx-auto max-w-6xl bg-white p-8 rounded-xl ">
+            <div id="buy-tickets"
+                class="w-4/5 mx-auto max-w-6xl bg-white p-2 lg:p-8 rounded-xl flex flex-col lg:flex-row justify-between">
 
                 <!-- Select Your Seat Part-1 -->
-                <div class="border-r-4 border-dotted">
+                <div class=" border-r-4 border-none lg:border-dotted flex-1">
                     <div class="p-4">
                         <h2 class="font-semibold text-2xl">Select Your Seat</h2>
                     </div>
@@ -255,7 +253,7 @@
                     </div>
 
                     <!-- All Seats -->
-                    <div class="grid grid-cols-5 grid-rows-10 gap-5 p-4">
+                    <div class="grid grid-cols-5 grid-rows-10 gap-2 lg:gap-5 pr-4">
                         <div class="seat-no">A</div>
                         <div class="seat">A1</div>
                         <div class="seat">A2</div>
@@ -311,13 +309,13 @@
                 </div>
 
                 <!-- Select Your Seat Part-2 -->
-                <div class="border-red-500 border-2 p-10 font-inter hidden">
+                <div class="p-4 font-inter">
 
-                    <div class="p-4 mb-4 border-b-2 border-dashed border-gray-300 ">
+                    <div class="p-2 mb-4 border-b-2 border-dashed border-gray-300 ">
                         <h2 class="font-semibold text-2xl">Select Your Seat</h2>
                     </div>
 
-                    <div class="bg-gray-100 p-6 rounded-lg space-y-5">
+                    <div class="bg-gray-100 p-6 rounded-lg space-y-5 mb-4">
                         <div class="border-b-2 border-dashed border-gray-300 flex justify-between font-medium text-lg">
                             <h3>Seat <span class="bg-[#1DD100] text-white rounded-md px-2">2</span></h3>
                             <h3>Class</h3>
@@ -328,8 +326,7 @@
                             <p>Economy</p>
                             <p>550</p>
                         </div>
-                        <div
-                            class="flex justify-between text-gray-500 text-lg border-b-2 border-solid border-gray-300 ">
+                        <div class="flex justify-between text-gray-500 text-lg border-b-2 border-solid border-gray-300">
                             <p>C2</p>
                             <p>Economy</p>
                             <p>550</p>
@@ -339,9 +336,11 @@
                             <p>Total Price</p>
                             <p>BDT <span>1100</span></p>
                         </div>
-                        <div class="bg-white flex justify-between rounded-md p-3">
-                            <input class="border-none outline-0 p-2" placeholder="Have any copupon?" />
-                            <button class="text-white px-5 py-2 rounded-lg   bg-[#1DD100] ">Apply</button>
+                        <div
+                            class="flex flex-col lg:flex-row justify-center lg:justify-between rounded-md p-0 lg:p-1 lg:bg-white ">
+                            <input class="border-none outline-0 p-2 rounded-sm" placeholder="Have any coupon?" />
+                            <button
+                                class="text-white px-5 py-2 rounded-lg mt-5 lg:mt-0 bg-[#1DD100] font-semibold ">Apply</button>
                         </div>
 
                         <div class="font-medium flex justify-between">
@@ -351,38 +350,70 @@
                     </div>
 
                     <!-- Name Phone and Email input Area -->
-                    <div>
-                        <h3>Passenger Name*</h3>
-                        <input type="text" placeholder="Enter your name">
-                    </div>
-                    <div>
-                        <h3>Phone Number*</h3>
-                        <input type="text" placeholder="Enter your phone number">
-                    </div>
-                    <div>
-                        <h3>Email ID</h3>
-                        <input type="text" placeholder="Enter your Email id">
-                    </div>
-                    <button class="w-full bg-[#1DD100] text-white rounded-lg p-3 font-bold text-xl">Next</button>
 
-                    <div class="flex justify-evenly underline text-gray-500">
-                        <p>Terms and Conditions</p>
-                        <p>Cancellation Policy</p>
+                    <div class="space-y-5">
+                        <div>
+                            <h3 class="text-base font-semibold">Passenger Name*</h3>
+                            <input
+                                class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
+                                type="text" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <h3 class="text-base font-semibold">Phone Number*</h3>
+                            <input
+                                class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
+                                type="text" placeholder="Enter your phone number">
+                        </div>
+                        <div>
+                            <h3 class="text-base font-semibold">Email ID</h3>
+                            <input
+                                class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
+                                type="text" placeholder="Enter your Email id">
+                        </div>
+                        <button class="w-full bg-[#1DD100] text-white rounded-lg py-2 font-bold text-xl">Next</button>
+                        <div class="flex justify-evenly text-center underline text-gray-500">
+                            <p>Terms and Conditions</p>
+                            <p>Cancellation Policy</p>
+                        </div>
                     </div>
-
 
 
                 </div>
             </div>
-
         </section>
-
-
     </main>
 
+    <!-- Footer Section -->
     <footer>
+        <section class="bg-[#030712] text-white px-8 lg:px-32 py-7 lg:py-28">
+            <div class="flex flex-col lg:flex-row justify-between border-dashed border-b-2 border-gray-500 pb-10">
+                <div class="space-y-4 text-center lg:text-left">
+                    <h3 class="font-extrabold font-raleway text-4xl">P-Ticket</h3>
+                    <p class="font-inter text-lg text-gray-300">P-Ticket is a digital platform to make your <br> daily
+                        commuting better.</p>
+                </div>
+                <div class="space-y-4 mt-4 lg:mt-0 flex flex-col items-center">
+                    <h3 class="font-raleway text-lg font-semibold text-center lg:text-left">Download our app</h3>
+                    <div
+                        class="flex items-center border-solid border-2 px-4 py-2 rounded-lg gap-4 lg:gap-2 justify-center w-3/4 lg:w-full">
+                        <img src="./images/playstore.png" alt="">
+                        <p class="text-xs">GET IT ON<br><span class="text-base">Google Play</span></p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="flex flex-col lg:flex-row justify-between mt-4">
+                <div>
+                    <p class="text-gray-300 text-center lg:text-left">@all rights reserved, P-Ticket services
+                        limited.202</p>
+                </div>
+                <div class="flex justify-between gap-2 lg:gap-8 font-medium font-inter text-base">
+                    <a href="">Terms & condition</a>
+                    <a href="">Return & refund policy</a>
+                    <a href="">Privacy policy</a>
+                </div>
+            </div>
+        </section>
     </footer>
 </body>
-
 </html>

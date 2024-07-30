@@ -8,3 +8,25 @@
 .font-raleway {
     font-family: "Raleway", sans-serif;
 }
+
+.seat {
+    /* bg-gray-200  px-6 py-2 rounded-lg */
+    padding: 10px 12px ;
+    border-radius: 10px;
+    text-align: center;
+    background: #F7F8F8;
+    color: rgba(3, 7, 18, 0.50);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.seat-no{
+    padding: 10px 12px ;
+    border-radius: 10px;
+    text-align: center;
+    color: rgba(3, 7, 18, 0.50);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500; 
+}

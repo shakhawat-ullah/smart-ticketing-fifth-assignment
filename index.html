@@ -184,7 +184,8 @@
                         <div
                             class="flex flex-col lg:flex-row gap-2 bg-[#1DD10026] px-3 lg:px-7 py-4 rounded-xl text-center">
                             <img src="images/seat-green.png" alt="">
-                            <p class="text-[#1DD100] text-base lg:text-lg font-semibold font-inter"><span>40</span>
+                            <p class="text-[#1DD100] text-base lg:text-lg font-semibold font-inter"><span
+                                    id="remaining-seat">40</span>
                                 Seats left</p>
                         </div>
 
@@ -316,36 +317,43 @@
                     </div>
 
                     <div class="bg-gray-100 p-6 rounded-lg space-y-5 mb-4">
+
                         <div class="border-b-2 border-dashed border-gray-300 flex justify-between font-medium text-lg">
-                            <h3>Seat <span class="bg-[#1DD100] text-white rounded-md px-2">2</span></h3>
+                            <h3>Seat <span id="purchase-count" class="bg-[#1DD100] text-white rounded-md px-2">0</span>
+                            </h3>
                             <h3>Class</h3>
                             <h3>Price</h3>
                         </div>
-                        <div class="flex justify-between text-gray-500 text-lg ">
-                            <p>C2</p>
-                            <p>Economy</p>
-                            <p>550</p>
+
+                        <!-- append selected seat -->
+                        <div id="selected-container" class="border-b-2 border-solid border-gray-300 pb-3">
                         </div>
-                        <div class="flex justify-between text-gray-500 text-lg border-b-2 border-solid border-gray-300">
-                            <p>C2</p>
-                            <p>Economy</p>
-                            <p>550</p>
-                        </div>
+
 
                         <div class="font-medium flex justify-between">
                             <p>Total Price</p>
-                            <p>BDT <span>1100</span></p>
+                            <p>BDT <span id="total-price">0</span></p>
                         </div>
-                        <div
+
+                        <!--Show Discounted price -->
+                        <div id="discounted-div" class="font-medium hidden justify-between">
+                            <p>Discount</p>
+                            <p>BDT <span id="discounted-price">0</span></p>
+                        </div>
+                        <hr>
+                        
+                        <!-- Coupon Code Part -->
+                        <div id="coupon-code"
                             class="flex flex-col lg:flex-row justify-center lg:justify-between rounded-md p-0 lg:p-1 lg:bg-white ">
-                            <input class="border-none outline-0 p-2 rounded-sm" placeholder="Have any coupon?" />
-                            <button
-                                class="text-white px-5 py-2 rounded-lg mt-5 lg:mt-0 bg-[#1DD100] font-semibold ">Apply</button>
+                            
+                            <input id="coupon-input" class="border-none outline-0 p-2 rounded-sm" placeholder="Have any coupon?" />
+                            <button onclick="updateGrandTotal('apply-btn')" id="apply-button"
+                                class="text-white px-5 py-2 rounded-lg mt-5 lg:mt-0 bg-[#1DD100] font-semibold">Apply</button>
                         </div>
 
                         <div class="font-medium flex justify-between">
                             <p>Grand Total</p>
-                            <p>BDT <span>1100</span></p>
+                            <p>BDT <span id="grand-total">0</span></p>
                         </div>
                     </div>
 
@@ -362,15 +370,17 @@
                             <h3 class="text-base font-semibold">Phone Number*</h3>
                             <input
                                 class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
-                                type="text" placeholder="Enter your phone number">
+                                type="tel" required placeholder="Enter your phone number">
                         </div>
                         <div>
                             <h3 class="text-base font-semibold">Email ID</h3>
                             <input
                                 class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
-                                type="text" placeholder="Enter your Email id">
+                                type="email" placeholder="Enter your Email id">
+
                         </div>
-                        <button class="w-full bg-[#1DD100] text-white rounded-lg py-2 font-bold text-xl">Next</button>
+
+                        <button class=" w-full bg-[#1DD100] text-white rounded-lg py-2 font-bold text-xl">Next</button>
                         <div class="flex justify-evenly text-center underline text-gray-500">
                             <p>Terms and Conditions</p>
                             <p>Cancellation Policy</p>
@@ -415,5 +425,8 @@
             </div>
         </section>
     </footer>
+
+    <script src="./js/ticket.js"></script>
 </body>
+
 </html>

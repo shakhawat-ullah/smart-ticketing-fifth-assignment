@@ -339,7 +339,7 @@
                         <!--Show Discounted price -->
                         <div id="discounted-div" class="font-medium hidden justify-between">
                             <p>Discount</p>
-                            <p>BDT <span id="discounted-price">0</span></p>
+                            <p><span> - </span> BDT <span id="discounted-price">0</span></p>
                         </div>
                         <hr>
 
@@ -350,7 +350,8 @@
                             <input id="coupon-input" class="border-none outline-0 p-2 rounded-sm"
                                 placeholder="Have any coupon?" />
                             <button onclick="updateGrandTotal('apply-btn')" id="apply-button"
-                                class="text-white px-5 py-2 rounded-lg mt-5 lg:mt-0 bg-[#1DD100] font-semibold">Apply</button>
+                                class="text-gray-500 px-5 py-2 rounded-lg mt-5 lg:mt-0 bg-gray-200 font-semibold"
+                                disabled>Apply</button>
                         </div>
 
                         <div class="font-medium flex justify-between">
@@ -370,7 +371,7 @@
                         </div>
                         <div>
                             <h3 class="text-base font-semibold">Phone Number*</h3>
-                            <input
+                            <input id="phone-number"
                                 class="pr-4 lg:pr-28 pl-2 py-3 w-full boder-solid border-2 rounded-lg outline-slate-300"
                                 type="tel" required placeholder="Enter your phone number">
                         </div>
@@ -381,9 +382,10 @@
                                 type="email" placeholder="Enter your Email id">
 
                         </div>
-
-                        <button onclick="my_modal_5.showModal()"
-                            class="w-full bg-[#1DD100] text-white rounded-lg py-2 font-bold text-xl ">Next</button>
+                        <!-- Next Button -->
+                        <button onclick="my_modal_5.showModal()" id="next-button"
+                            class="w-full bg-gray-200 text-gray-500 rounded-lg py-2 font-bold text-xl"
+                            disabled>Next</button>
                         <!-- Modal -->
                         <!-- Open the modal using ID.showModal() method -->
                         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">

@@ -1,15 +1,19 @@
 
 
-
-
-
-
-
 const allSeats = document.getElementsByClassName("seat");
 for (const seat of allSeats) {
     seat.addEventListener("click", function (event) {
-        
         const seatPurchase = getConvertedValue("seat-purchase");
+        if (seatPurchase + 1 === 4) {
+            const applyButton = document.getElementById("apply-button");
+            applyButton.removeAttribute("disabled");
+            applyButton.classList.remove("text-gray-500");
+            applyButton.classList.remove("bg-gray-200");
+            applyButton.classList.add("bg-[#1DD100]");
+            applyButton.classList.add("text-white");
+
+        }
+
         if (seatPurchase + 1 > 4) {
             alert("You can't select more than 4 seats");
             return;
@@ -46,22 +50,56 @@ for (const seat of allSeats) {
         div.appendChild(p2);
         div.appendChild(p3);
         selectedContainer.appendChild(div);
-
         updateTotalPrice(seatPrice);
         updateGrandTotal();
 
-
-
-
+        const phoneNumberInput = document.getElementById("phone-number").value;
+        console.log(phoneNumberInput);
+        if (seatPurchase == 3 && phoneNumberInput !== '') {
+            activeNextButton();
+        }
+        else {
+            deactivateNextButton();
+        }
 
     })
+
 }
 
 
+document.getElementById("phone-number").addEventListener("keyup", function (event) {
+    const phoneNumberValue = event.target.value;
+    const seatPurchase = getConvertedValue("seat-purchase");
+    console.log(typeof phoneNumberValue, phoneNumberValue, seatPurchase);
 
-const maxSeatPurchase = 4;
+    if ((phoneNumberValue !== '') && (seatPurchase >= 4)) {
+        activeNextButton();
+    }
+
+    else {
+        deactivateNextButton();
+    }
+
+})
 
 
+function activeNextButton() {
+    const nextButton = document.getElementById("next-button");
+    nextButton.removeAttribute("disabled");
+    nextButton.classList.remove("text-gray-500");
+    nextButton.classList.remove("bg-gray-200");
+    nextButton.classList.add("bg-[#1DD100]");
+    nextButton.classList.add("text-white");
+}
+
+function deactivateNextButton() {
+    const nextButton = document.getElementById("next-button");
+    nextButton.setAttribute("disabled", true);
+    nextButton.classList.add("text-gray-500");
+    nextButton.classList.add("bg-gray-200");
+    nextButton.classList.remove("bg-[#1DD100]");
+    nextButton.classList.remove("text-white");
+}
 
 
 function getConvertedValue(id) {
@@ -76,6 +114,8 @@ function updateTotalPrice(value) {
     const sum = totalPrice + value;
     document.getElementById("total-price").innerText = sum;
 }
+
+
 
 function updateGrandTotal(applyButtonClicked) {
     let totalPrice = getConvertedValue("total-price");

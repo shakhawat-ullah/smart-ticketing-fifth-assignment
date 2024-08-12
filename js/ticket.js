@@ -3,9 +3,27 @@
 
 
 
+
+
 const allSeats = document.getElementsByClassName("seat");
 for (const seat of allSeats) {
     seat.addEventListener("click", function (event) {
+        
+        const seatPurchase = getConvertedValue("seat-purchase");
+        if (seatPurchase + 1 > 4) {
+            alert("You can't select more than 4 seats");
+            return;
+        }
+
+        document.getElementById("seat-purchase").innerText = seatPurchase + 1;
+        const seatsLeft = getConvertedValue("seats-left");
+        document.getElementById("seats-left").innerText = seatsLeft - 1;
+
+        event.target.setAttribute("disabled", false);
+        event.target.style.backgroundColor = "#1DD100";
+        event.target.style.color = "white";
+
+
         const seatName = event.target.innerText;
         const seatClass = "Economy";
         const seatPrice = 550;
@@ -28,12 +46,22 @@ for (const seat of allSeats) {
         div.appendChild(p2);
         div.appendChild(p3);
         selectedContainer.appendChild(div);
+
         updateTotalPrice(seatPrice);
         updateGrandTotal();
 
 
+
+
+
     })
 }
+
+
+
+const maxSeatPurchase = 4;
+
+
 
 
 function getConvertedValue(id) {
@@ -55,8 +83,8 @@ function updateGrandTotal(applyButtonClicked) {
 
     if (applyButtonClicked) {
         const coupon = document.getElementById("coupon-input").value;
-        
-        
+
+
         if (coupon === "Couple 20" || coupon === "NEW15") {
             let discount = 0;
             if (coupon === "Couple 20") {

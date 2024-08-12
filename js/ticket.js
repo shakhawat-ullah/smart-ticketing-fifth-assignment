@@ -55,24 +55,21 @@ for (const seat of allSeats) {
 
         const phoneNumberInput = document.getElementById("phone-number").value;
         console.log(phoneNumberInput);
-        if (seatPurchase == 3 && phoneNumberInput !== '') {
+        if (seatPurchase + 1 >= 1 && phoneNumberInput !== '') {
             activeNextButton();
         }
         else {
             deactivateNextButton();
         }
-
     })
-
 }
-
 
 document.getElementById("phone-number").addEventListener("keyup", function (event) {
     const phoneNumberValue = event.target.value;
     const seatPurchase = getConvertedValue("seat-purchase");
     console.log(typeof phoneNumberValue, phoneNumberValue, seatPurchase);
 
-    if ((phoneNumberValue !== '') && (seatPurchase >= 4)) {
+    if ((phoneNumberValue !== '') && (seatPurchase >= 1)) {
         activeNextButton();
     }
 

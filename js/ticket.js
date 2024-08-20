@@ -122,9 +122,9 @@ function updateGrandTotal(applyButtonClicked) {
         const coupon = document.getElementById("coupon-input").value;
 
 
-        if (coupon === "Couple 20" || coupon === "NEW15") {
+        if (coupon === "Couple 20" || coupon === "Couple20" || coupon === "NEW15") {
             let discount = 0;
-            if (coupon === "Couple 20") {
+            if (coupon === "Couple 20" || coupon === "Couple20") {
                 discount = totalPrice * (20 / 100);
             }
 
